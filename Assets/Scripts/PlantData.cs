@@ -8,4 +8,6 @@ public class PlantData : MonoBehaviour
     public string PlantName;
     [TextArea(3, 5)]
     public string PlantDescription;
+    [Header("Plant Image")]
+    public Sprite PlantImage;
 }

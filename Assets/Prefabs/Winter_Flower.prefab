@@ -288,8 +288,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feab9ea284532594c8a24ff3cc4f1903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantData
-  PlantName: Blue_Weeds
-  PlantDescription: Blue_Weeds symbolizes the sadness and pain of one.
+  PlantName: Blue_Petunia
+  PlantDescription: Like a piece of the evening heavens resting upon the earth, the
+    Blue Petunia carries whispers of mystery and grace. Its sapphire petals unfold
+    with quiet confidence, speaking of trust, inspiration, and unwavering devotion.
+    In floriography, it is a bloom that invites the soul to dream, to wonder, and
+    to believe in beauty beyond the horizon.
+  PlantImage: {fileID: 21300000, guid: 7e19b68c4a86f2d439f679da96e15f07, type: 3}
 --- !u!1 &8786925021163136871
 GameObject:
   m_ObjectHideFlags: 0

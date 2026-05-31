@@ -194,9 +194,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feab9ea284532594c8a24ff3cc4f1903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantData
-  PlantName: Yellow_Dandelions
-  PlantDescription: Yellow_Dandelions often symbolizes to the calmness and honesty
-    of one.
+  PlantName: Yellow Tulip
+  PlantDescription: Like a golden flame dancing in the spring breeze, the Yellow
+    Tulip is a symbol of happiness woven into nature's tapestry. Its radiant petals
+    whisper of cheerful beginnings and cherished bonds, while its graceful form reminds
+    us that beauty often shines brightest through kindness. In floriography, it is
+    the flower of sunshine, carrying hope wherever it blooms.
+  PlantImage: {fileID: 21300000, guid: 7876e6a9469449a428baa9557e732dc7, type: 3}
 --- !u!1 &8061760761306982563
 GameObject:
   m_ObjectHideFlags: 0

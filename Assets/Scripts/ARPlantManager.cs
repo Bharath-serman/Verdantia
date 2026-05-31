@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using TMPro;
+using UnityEngine.UI;
 
 public class ARPlantManager : MonoBehaviour
 {
@@ -11,11 +12,13 @@ public class ARPlantManager : MonoBehaviour
     [SerializeField] private ARRaycastManager raycastManager;
     [SerializeField] private List<GameObject> PlantPrefabs;
     bool ActiveStatus = false;
+    float DestroyDuration = 10f;
 
     [Header("UI Elements")]
     [Tooltip("The Text UI elements like name and description of the plant.")]
     [SerializeField] private TMP_Text PlantName;
     [SerializeField] private TMP_Text PlantDescription;
+    [SerializeField] private Image PlantImage;
 
     [Header("Panel UI")]
     [Tooltip("The Panel that stores the info about the plant")]
@@ -37,10 +40,10 @@ public class ARPlantManager : MonoBehaviour
     {
         //Get the first touch input.
         if (Input.touchCount == 0) return;
-        Touch touch =  Input.GetTouch(0);
+        Touch touch = Input.GetTouch(0);
 
         //Check the phase of the touch.
-        if(touch.phase == TouchPhase.Began)
+        if (touch.phase == TouchPhase.Began)
         {
             //Clicking on the existing plant
             if (SelectPlant(touch.position)) return;
@@ -55,7 +58,7 @@ public class ARPlantManager : MonoBehaviour
         }
     }
     #region PlantSpawnLogic
-    private void SpawnPlant(Vector2 position, Quaternion rotation)
+     void SpawnPlant(Vector3 position, Quaternion rotation)
     {
         if (PlantPrefabs == null || PlantPrefabs.Count == 0) return;
 
@@ -63,7 +66,10 @@ public class ARPlantManager : MonoBehaviour
         GameObject SelectedPrefab = PlantPrefabs[randomIndex];
 
         //Instatiate the Random Plant onto the plane
-        Instantiate(SelectedPrefab, position, rotation);
+        GameObject SpawnedPlant =  Instantiate(SelectedPrefab, position, rotation);
+
+        //Destroy after some seconds.
+        Destroy(SpawnedPlant, DestroyDuration);
     }
 
     #endregion
@@ -91,10 +97,12 @@ public class ARPlantManager : MonoBehaviour
 
     private void DisplayUI(PlantData data)
     {
-        if(DictionaryPanel == null || PlantName == null || PlantDescription == null) return;
+        if(DictionaryPanel == null || PlantName == null || PlantDescription == null
+            || PlantImage == null) return;
 
         PlantName.text = data.PlantName;
         PlantDescription.text = data.PlantDescription;
+        PlantImage.sprite = data.PlantImage;
 
         //Enable the dictionary panel.
         DictionaryPanel.SetActive(!ActiveStatus);  //True.
