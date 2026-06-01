@@ -149,7 +149,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 1.0.2
+  bundleVersion: 1.0.3
   preloadedAssets:
   - {fileID: 11400000, guid: 3545d8d9e00ec844d9182ca206b58a30, type: 2}
   - {fileID: 7409956309476867576, guid: 3fd4fc0127790db4bae83f7b77da8d45, type: 2}
@@ -309,7 +309,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: ae55c8cd7882fe94ea63b4d0f6960aff, type: 3}
+      m_Icon: {fileID: 2800000, guid: fb0987e42fa9e0b43b3e9f162489f035, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
