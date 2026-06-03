@@ -56,9 +56,12 @@ public class ARPlantManager : MonoBehaviour
                 SpawnPlant(hitpose.position, hitpose.rotation);
             }
         }
+
     }
+
+
     #region PlantSpawnLogic
-     void SpawnPlant(Vector3 position, Quaternion rotation)
+    void SpawnPlant(Vector3 position, Quaternion rotation)
     {
         if (PlantPrefabs == null || PlantPrefabs.Count == 0) return;
 
