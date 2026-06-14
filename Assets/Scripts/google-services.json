@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1054814683679",
+    "project_id": "auth-unity-1cde4",
+    "storage_bucket": "auth-unity-1cde4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054814683679:android:1f615951c5a32811fc0b2a",
+        "android_client_info": {
+          "package_name": "com.LastLifeStudios.Verdantia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP5KkvQQZL8_dIWR2MxTRnCjSfNzfrU5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

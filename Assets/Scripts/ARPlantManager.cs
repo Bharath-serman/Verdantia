@@ -4,6 +4,15 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using TMPro;
 using UnityEngine.UI;
+using System.Runtime.CompilerServices;
+
+//Enumerators
+public enum PropsType
+{
+    Plants,
+    Trees,
+    Grass
+}
 
 public class ARPlantManager : MonoBehaviour
 {
@@ -11,6 +20,7 @@ public class ARPlantManager : MonoBehaviour
     [Header("Inputs")]
     [SerializeField] private ARRaycastManager raycastManager;
     [SerializeField] private List<GameObject> PlantPrefabs;
+    [SerializeField] private List<GameObject> TreePrefabs;
     bool ActiveStatus = false;
     float DestroyDuration = 10f;
 

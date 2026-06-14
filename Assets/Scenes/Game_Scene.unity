@@ -168,6 +168,7 @@ MonoBehaviour:
   - {fileID: 6218926795957947253, guid: 4e70832668dd52847bcc2ce621ad278d, type: 3}
   - {fileID: 7364511180811920597, guid: 3269c727ce5c9f146a244e764b000447, type: 3}
   - {fileID: 6598919795059887590, guid: a64c864815011044ca53c8f8ffb61b15, type: 3}
+  TreePrefabs: []
   PlantName: {fileID: 1299715059}
   PlantDescription: {fileID: 2102996938}
   PlantImage: {fileID: 1516760628}
@@ -454,7 +455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &479090077
 RectTransform:
   m_ObjectHideFlags: 0
@@ -591,11 +592,11 @@ RectTransform:
   - {fileID: 1568897434}
   m_Father: {fileID: 571829908}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 14.154999}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 1, y: 0}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &563427469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,7 +697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &571829905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -959,7 +960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1050063165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1620,7 +1621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6, y: 1.5000134}
+  m_AnchoredPosition: {x: 6, y: 1.5}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1568897435
