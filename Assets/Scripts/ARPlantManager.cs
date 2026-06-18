@@ -4,15 +4,6 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using TMPro;
 using UnityEngine.UI;
-using System.Runtime.CompilerServices;
-
-//Enumerators
-public enum PropsType
-{
-    Plants,
-    Trees,
-    Grass
-}
 
 public class ARPlantManager : MonoBehaviour
 {
@@ -20,7 +11,6 @@ public class ARPlantManager : MonoBehaviour
     [Header("Inputs")]
     [SerializeField] private ARRaycastManager raycastManager;
     [SerializeField] private List<GameObject> PlantPrefabs;
-    [SerializeField] private List<GameObject> TreePrefabs;
     bool ActiveStatus = false;
     float DestroyDuration = 10f;
 
@@ -29,14 +19,43 @@ public class ARPlantManager : MonoBehaviour
     [SerializeField] private TMP_Text PlantName;
     [SerializeField] private TMP_Text PlantDescription;
     [SerializeField] private Image PlantImage;
+    [SerializeField] private GameObject GardenButton;
+
+    //For Additional Props.
+    [SerializeField] private GameObject SelectedProp;
 
     [Header("Panel UI")]
     [Tooltip("The Panel that stores the info about the plant")]
     [SerializeField] private GameObject DictionaryPanel;
+    [Tooltip("The Inventory UI panel that stores the props prefabs")]
+    [SerializeField] private GameObject InventoryPanel;
 
     [Header("AR Raycast Hit")]
     private List<ARRaycastHit> hits = new List<ARRaycastHit>();
     #endregion
+
+
+    //Selected Prefab Button Logic
+    public void SelectedPrefab(GameObject prefab)
+    {
+        SelectedProp = prefab;
+    }
+
+
+    //Garden Button Logic
+    public void GardenButtonLogic()
+    {
+        InventoryPanel.SetActive(!ActiveStatus);  //True.
+    }
+
+
+    //Back Button Logic
+    public void BackLogic()
+    {
+        //Disable the Inventory UI.
+        InventoryPanel.SetActive(ActiveStatus);  //False.
+    }
+
 
     void Start()
     {
@@ -44,6 +63,8 @@ public class ARPlantManager : MonoBehaviour
         if (DictionaryPanel == null) return;
         else
             DictionaryPanel.SetActive(ActiveStatus);  //False.
+
+        InventoryPanel.SetActive(ActiveStatus);  //False.
     }
 
     void Update()
@@ -79,12 +100,11 @@ public class ARPlantManager : MonoBehaviour
         GameObject SelectedPrefab = PlantPrefabs[randomIndex];
 
         //Instatiate the Random Plant onto the plane
-        GameObject SpawnedPlant =  Instantiate(SelectedPrefab, position, rotation);
+        GameObject SpawnedPlant = Instantiate(SelectedProp, position, rotation);
 
         //Destroy after some seconds.
         Destroy(SpawnedPlant, DestroyDuration);
     }
-
     #endregion
 
     #region Selecting Random Plant Logic.
@@ -103,14 +123,14 @@ public class ARPlantManager : MonoBehaviour
             }
         }
         return false;
-    } 
+    }
     #endregion
 
     #region Display Dictionary Logic
 
     private void DisplayUI(PlantData data)
     {
-        if(DictionaryPanel == null || PlantName == null || PlantDescription == null
+        if (DictionaryPanel == null || PlantName == null || PlantDescription == null
             || PlantImage == null) return;
 
         PlantName.text = data.PlantName;
@@ -128,6 +148,10 @@ public class ARPlantManager : MonoBehaviour
         if (DictionaryPanel == null) return;
 
         DictionaryPanel.SetActive(ActiveStatus);  //False.
-    } 
+    }
     #endregion
 }
+
+
+
+
