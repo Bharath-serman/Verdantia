@@ -100,4 +100,32 @@ public class FirebaseGoogleLogin : MonoBehaviour
         // Load Next Scene
         SceneManager.LoadScene(nextSceneName);
     }
+
+    //Anonymous sign in.
+    public void AnonymousSignIn()
+    {
+        auth.SignInAnonymouslyAsync().ContinueWith(task =>
+        {
+            if (task.IsFaulted)
+            {
+                Debug.LogError("Anonymous Sign-In Failed: " + task.Exception);
+                return;
+            }
+            if (task.IsCanceled)
+            {
+                Debug.LogWarning("Anonymous Sign-In Cancelled");
+                return;
+            }
+            FirebaseUser user = task.Result.User;
+            Debug.Log("Anonymous Login Success");
+            Debug.Log("UID: " + user.UserId);
+            // Save User Details
+            PlayerPrefs.SetString("UserName", "Anonymous");
+            PlayerPrefs.SetString("UserEmail", "");
+            PlayerPrefs.SetString("UserPhoto", "");
+            PlayerPrefs.Save();
+            // Load Next Scene
+            SceneManager.LoadScene(nextSceneName);
+        });
+    }
 }
