@@ -1,6 +1,6 @@
 # Verdantia 🌿
 
-An immersive Augmented Reality (AR) application built using the Unity Engine that brings a virtual garden into your physical space. Experience nature right in your room with real-time environment interaction and robust user management.
+An immersive Augmented Reality (AR) application built using the Unity Engine that brings a virtual garden into your physical space. Experience nature right in your room with real-time environment interaction.
 
 ---
 
