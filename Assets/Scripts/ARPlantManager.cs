@@ -13,6 +13,7 @@ public class ARPlantManager : MonoBehaviour
     [SerializeField] private List<GameObject> PlantPrefabs;
     bool ActiveStatus = false;
     float DestroyDuration = 10f;
+    string Treeprefabname = "Tree_";
 
     [Header("UI Elements")]
     [Tooltip("The Text UI elements like name and description of the plant.")]
@@ -69,26 +70,43 @@ public class ARPlantManager : MonoBehaviour
 
     void Update()
     {
-        //Get the first touch input.
-        if (Input.touchCount == 0) return;
-        Touch touch = Input.GetTouch(0);
+#if UNITY_EDITOR || UNITY_STANDALONE
 
-        //Check the phase of the touch.
-        if (touch.phase == TouchPhase.Began)
+        // Mouse Input (Editor/PC)
+        if (Input.GetMouseButtonDown(0))
         {
-            //Clicking on the existing plant
-            if (SelectPlant(touch.position)) return;
-
-            //Spanwing a new one on the plane.
-            if (raycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
-            {
-                Pose hitpose = hits[0].pose;
-                //Spawn a new plant.
-                SpawnPlant(hitpose.position, hitpose.rotation);
-            }
+            HandleInput(Input.mousePosition);
         }
 
+#else
+
+    // Touch Input (Mobile)
+    if (Input.touchCount > 0)
+    {
+        Touch touch = Input.GetTouch(0);
+
+        if (touch.phase == TouchPhase.Began)
+        {
+            HandleInput(touch.position);
+        }
     }
+
+#endif
+    }
+
+    private void HandleInput(Vector2 screenPosition)
+{
+    // Check if an existing plant was clicked
+    if (SelectPlant(screenPosition))
+        return;
+
+    // Otherwise try placing a new plant
+    if (raycastManager.Raycast(screenPosition, hits, TrackableType.PlaneWithinPolygon))
+    {
+        Pose hitPose = hits[0].pose;
+        SpawnPlant(hitPose.position, hitPose.rotation);
+    }
+}
 
 
     #region PlantSpawnLogic
@@ -96,11 +114,17 @@ public class ARPlantManager : MonoBehaviour
     {
         if (PlantPrefabs == null || PlantPrefabs.Count == 0) return;
 
+        Quaternion spawnrotation = rotation;
+
         int randomIndex = Random.Range(0, PlantPrefabs.Count);
         GameObject SelectedPrefab = PlantPrefabs[randomIndex];
 
+        //Check if the selected prop was tree.
+        if (SelectedPrefab.name == Treeprefabname)
+            spawnrotation *= Quaternion.Euler(-90f, 0f, 0f);
+
         //Instatiate the Random Plant onto the plane
-        GameObject SpawnedPlant = Instantiate(SelectedProp, position, rotation);
+        GameObject SpawnedPlant = Instantiate(SelectedProp, position, spawnrotation);
 
         //Destroy after some seconds.
         Destroy(SpawnedPlant, DestroyDuration);
