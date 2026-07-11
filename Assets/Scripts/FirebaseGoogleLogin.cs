@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Firebase.Auth;
+using Firebase.Extensions;
 using Google;
 
 public class FirebaseGoogleLogin : MonoBehaviour
@@ -18,7 +19,8 @@ public class FirebaseGoogleLogin : MonoBehaviour
         configuration = new GoogleSignInConfiguration
         {
             WebClientId = "1054814683679-16j3dadot3m2vmis1np2j33h3eg3bqf0.apps.googleusercontent.com",
-            RequestIdToken = true
+            RequestIdToken = true,
+            RequestEmail = true
         };
     }
 
@@ -30,7 +32,7 @@ public class FirebaseGoogleLogin : MonoBehaviour
 
         GoogleSignIn.DefaultInstance
             .SignIn()
-            .ContinueWith(OnGoogleAuthenticated);
+            .ContinueWithOnMainThread(OnGoogleAuthenticated);
 
 #else
 
@@ -43,7 +45,13 @@ public class FirebaseGoogleLogin : MonoBehaviour
     {
         if (task.IsFaulted)
         {
-            Debug.LogError("Google Sign-In Failed: " + task.Exception);
+            Debug.LogError("Google Sign-In Failed");
+
+            foreach (var e in task.Exception.Flatten().InnerExceptions)
+            {
+                Debug.LogError(e);
+            }
+
             return;
         }
 
@@ -58,14 +66,20 @@ public class FirebaseGoogleLogin : MonoBehaviour
             null);
 
         auth.SignInWithCredentialAsync(credential)
-            .ContinueWith(OnFirebaseAuthenticated);
+            .ContinueWithOnMainThread(OnFirebaseAuthenticated);
     }
 
     private void OnFirebaseAuthenticated(System.Threading.Tasks.Task<FirebaseUser> task)
     {
         if (task.IsFaulted)
         {
-            Debug.LogError("Firebase Authentication Failed: " + task.Exception);
+            Debug.LogError("Firebase Authentication Failed");
+
+            foreach (var e in task.Exception.Flatten().InnerExceptions)
+            {
+                Debug.LogError(e);
+            }
+
             return;
         }
 
@@ -82,50 +96,16 @@ public class FirebaseGoogleLogin : MonoBehaviour
         Debug.Log("Email: " + user.Email);
         Debug.Log("UID: " + user.UserId);
 
-        // Save User Details
         PlayerPrefs.SetString("UserName", user.DisplayName ?? "");
         PlayerPrefs.SetString("UserEmail", user.Email ?? "");
 
         if (user.PhotoUrl != null)
-        {
             PlayerPrefs.SetString("UserPhoto", user.PhotoUrl.ToString());
-        }
         else
-        {
             PlayerPrefs.SetString("UserPhoto", "");
-        }
 
         PlayerPrefs.Save();
 
-        // Load Next Scene
         SceneManager.LoadScene(nextSceneName);
-    }
-
-    //Anonymous sign in.
-    public void AnonymousSignIn()
-    {
-        auth.SignInAnonymouslyAsync().ContinueWith(task =>
-        {
-            if (task.IsFaulted)
-            {
-                Debug.LogError("Anonymous Sign-In Failed: " + task.Exception);
-                return;
-            }
-            if (task.IsCanceled)
-            {
-                Debug.LogWarning("Anonymous Sign-In Cancelled");
-                return;
-            }
-            FirebaseUser user = task.Result.User;
-            Debug.Log("Anonymous Login Success");
-            Debug.Log("UID: " + user.UserId);
-            // Save User Details
-            PlayerPrefs.SetString("UserName", "Anonymous");
-            PlayerPrefs.SetString("UserEmail", "");
-            PlayerPrefs.SetString("UserPhoto", "");
-            PlayerPrefs.Save();
-            // Load Next Scene
-            SceneManager.LoadScene(nextSceneName);
-        });
     }
 }
