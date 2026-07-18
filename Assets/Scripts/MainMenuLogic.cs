@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuLogic : MonoBehaviour
 {
+    public static MainMenuLogic Instance;
     #region Inputs
     [Header("Inputs")]
     [SerializeField] private Animator Fade_BG;
@@ -16,7 +17,7 @@ public class MainMenuLogic : MonoBehaviour
         "Load"
     };
 
-    string SceneName = "Game_Scene";
+    int SceneIndex = 2;
 
     float DelayTime = 1.5f;
     float AudioFadeDuration = 1.5f;
@@ -29,7 +30,7 @@ public class MainMenuLogic : MonoBehaviour
     #endregion
 
     #region StartGameLogic
-    IEnumerator StartGame()
+    public IEnumerator StartGame()
     {
         //Play the Button Click Sound.
         Button_Click_Sound.Play();
@@ -50,7 +51,7 @@ public class MainMenuLogic : MonoBehaviour
         yield return new WaitForSeconds(DelayTime + 1.5f);  //Total -> 3 seconds.
 
         //Load the Next Scene.
-        SceneManager.LoadScene(SceneName);
+        SceneManager.LoadScene(SceneIndex);
 
         yield return null;
     }
@@ -64,6 +65,7 @@ public class MainMenuLogic : MonoBehaviour
 
         //Hide the About Panel at start.
         AboutPanel.SetActive(Status);  //False.
+        Instance = this;
     }
 
     public void BeginGame()
