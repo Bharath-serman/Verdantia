@@ -21,6 +21,9 @@ public class ARPlantManager : MonoBehaviour
     [SerializeField] private TMP_Text PlantDescription;
     [SerializeField] private Image PlantImage;
     [SerializeField] private GameObject GardenButton;
+    [SerializeField] private GameObject OceanButton;  //In the Ocean Level.
+
+    public GameObject OceanInventoryPanel;
 
     //For Additional Props.
     [SerializeField] private GameObject SelectedProp;
@@ -49,12 +52,22 @@ public class ARPlantManager : MonoBehaviour
         InventoryPanel.SetActive(!ActiveStatus);  //True.
     }
 
+    public void OceanButtonLogic()
+    {
+        OceanInventoryPanel.SetActive(!ActiveStatus);  //True.
+    }
 
     //Back Button Logic
     public void BackLogic()
     {
         //Disable the Inventory UI.
         InventoryPanel.SetActive(ActiveStatus);  //False.
+    }
+
+    public void OceanPanelBackLogic()
+    {
+        //Disable the Inventory UI.
+        OceanInventoryPanel.SetActive(ActiveStatus);  //False.
     }
 
 
@@ -66,6 +79,7 @@ public class ARPlantManager : MonoBehaviour
             DictionaryPanel.SetActive(ActiveStatus);  //False.
 
         InventoryPanel.SetActive(ActiveStatus);  //False.
+        OceanInventoryPanel.SetActive(ActiveStatus);  //False.
     }
 
     void Update()
