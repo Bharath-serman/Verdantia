@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
 
+    #region Inputs
     [Header("Inputs")]
     public GameObject PausePanel;
     bool PanelStatus = false;
@@ -12,6 +13,9 @@ public class PauseManager : MonoBehaviour
         "Ocean_Scene",  //Index 0
         "Game_Scene",  // Index 1
     };
+
+    private float OriginalTime = 1f;
+    #endregion
 
     void Start()
     {
@@ -40,8 +44,9 @@ public class PauseManager : MonoBehaviour
     public void MainSceneLoad(string SceneName)
     {
         SceneManager.LoadScene(SceneName);
+        Time.timeScale = OriginalTime;  //0f.
         //print("Scene Loaded");
-    } 
+    }
     #endregion
 
     #region Scene_Switch Logic
