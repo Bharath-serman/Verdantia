@@ -8,11 +8,7 @@ public class PauseManager : MonoBehaviour
     [Header("Inputs")]
     public GameObject PausePanel;
     bool PanelStatus = false;
-    private string[] SceneNames =
-    {
-        "Ocean_Scene",  //Index 0
-        "Game_Scene",  // Index 1
-    };
+    [SerializeField] private string[] SceneNames;
 
     private float OriginalTime = 1f;
     #endregion
@@ -52,20 +48,13 @@ public class PauseManager : MonoBehaviour
     #region Scene_Switch Logic
     public void SwitchScene(int index)
     {
-        switch (index)
+        if(index < 0 || index >= SceneNames.Length)
         {
-            case 0:
-                //MainMenuLogic.Instance.StartCoroutine(MainMenuLogic.Instance.StartGame());
-                SceneManager.LoadScene(SceneNames[0]);
-                break;
-            case 1:
-                //MainMenuLogic.Instance.StartCoroutine(MainMenuLogic.Instance.StartGame());
-                SceneManager.LoadScene(SceneNames[1]);
-                break;
-            default:
-                print("Scene Index not Specified!");
-                break;
+            Debug.LogError("Invalid Scene Index : {index}");
+            return;
         }
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneNames[index]);
     } 
     #endregion
 
