@@ -608,7 +608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &995675631
 RectTransform:
   m_ObjectHideFlags: 0
@@ -767,7 +767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1050063165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2001,9 +2001,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'GRASS
-
-'
+  m_text: FENCE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63d596b51d30fa84b8d9cd22a0f8a4a0, type: 2}
   m_sharedMaterial: {fileID: 3838898761543873600, guid: 63d596b51d30fa84b8d9cd22a0f8a4a0, type: 2}
@@ -2459,7 +2457,7 @@ MonoBehaviour:
         m_MethodName: SelectedPrefab
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 919132149155446097, guid: 632efa79006ce1e4b93a3726308e4583, type: 3}
+          m_ObjectArgument: {fileID: 3468670157804426349, guid: 817b99863aa6ac04c8a7502dd18e3bc6, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -2750,11 +2748,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4483937c4864f044837f26996ada8ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9d3e69103498d0f45b129b8e6592ec66, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -3516,7 +3514,7 @@ GameObject:
   - component: {fileID: 1596813708862779559}
   - component: {fileID: 2256350431248554881}
   m_Layer: 5
-  m_Name: Grass_Image
+  m_Name: Fence_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3659,7 +3657,7 @@ GameObject:
   - component: {fileID: 2407044688688790677}
   - component: {fileID: 1307687797847790912}
   m_Layer: 5
-  m_Name: Grass Button
+  m_Name: Fence_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3704,15 +3702,15 @@ RectTransform:
   m_GameObject: {fileID: 3259375930403903392}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2757669, y: 0.2757669, z: 0.2757669}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8887359281073281831}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -128, y: 155}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -131.6, y: 137.5}
+  m_SizeDelta: {x: 532, y: 469}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4459468017528379708
 CanvasRenderer:
@@ -4220,6 +4218,10 @@ PrefabInstance:
     - target: {fileID: 7413122680252757417, guid: c3c7c4d02e52e19409438048dcb712c7, type: 3}
       propertyPath: m_Name
       value: Pause_Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413122680252757417, guid: c3c7c4d02e52e19409438048dcb712c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
