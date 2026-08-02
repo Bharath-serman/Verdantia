@@ -56,8 +56,9 @@ Before you begin, ensure you have the following installed and configured:
 
 ---
 
-## Project Structure
+## Screenshots
 
-* `Assets/` — Contains all project scripts (C#), scenes, prefabs, UI assets, and materials.
-* `.vscode/` — Tailored workspace configurations for seamless editing in Visual Studio Code.
-* `ProjectSettings/` — Unity project engine configurations.
+<img width="537" height="945" alt="image" src="https://github.com/user-attachments/assets/f59031b6-58cd-4da7-8b07-4087e787a7bb" />
+<img width="540" height="952" alt="image" src="https://github.com/user-attachments/assets/d8e09bf6-4da6-4e19-ba64-85ea31b097bc" />
+<img width="537" height="953" alt="image" src="https://github.com/user-attachments/assets/89c0beae-f6af-418a-89b8-d055b3b05076" />
+<img width="540" height="957" alt="image" src="https://github.com/user-attachments/assets/e3cf426e-1bc6-46a6-9027-87a2b7aa836c" />
