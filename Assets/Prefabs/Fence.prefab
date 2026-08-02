@@ -162,6 +162,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 248861250735791312}
+  - component: {fileID: 77387272803119827}
+  - component: {fileID: 2627340597166033111}
   m_Layer: 0
   m_Name: Fence
   m_TagString: Untagged
@@ -186,6 +188,43 @@ Transform:
   - {fileID: 7295963280474243600}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &77387272803119827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3468670157804426349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feab9ea284532594c8a24ff3cc4f1903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlantData
+  PlantName: Fence
+  PlantDescription: A fence is an outdoor structure that works as a boundary, a safety
+    barrier, or a way to keep animals and people in or out.
+  PlantImage: {fileID: 21300000, guid: 9d3e69103498d0f45b129b8e6592ec66, type: 3}
+--- !u!65 &2627340597166033111
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3468670157804426349}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.7162066, y: 1.5023396, z: 0.21763946}
+  m_Center: {x: -1.3060017, y: 0.744631, z: 0.029678108}
 --- !u!1 &8428489251058005870
 GameObject:
   m_ObjectHideFlags: 0

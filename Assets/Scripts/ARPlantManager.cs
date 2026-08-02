@@ -46,6 +46,7 @@ public class ARPlantManager : MonoBehaviour
     }
 
 
+    #region Panel_Buttons_Logic
     //Garden Button Logic
     public void GardenButtonLogic()
     {
@@ -68,7 +69,8 @@ public class ARPlantManager : MonoBehaviour
     {
         //Disable the Inventory UI.
         OceanInventoryPanel.SetActive(ActiveStatus);  //False.
-    }
+    } 
+    #endregion
 
 
     void Start()

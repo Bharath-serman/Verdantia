@@ -17,9 +17,14 @@ public class ProfileManager : MonoBehaviour
     [Header("Default Profile Image")]
     [SerializeField] private Texture defaultProfileImage;
 
+    bool IsActived = false;
+    public GameObject MainMenuPanel;
+    public GameObject ProfilePanel;
+
     private void Start()
     {
         LoadProfile();
+        ProfilePanel.SetActive(IsActived);  //False.
     }
 
     private void LoadProfile()
@@ -43,6 +48,23 @@ public class ProfileManager : MonoBehaviour
             profileImage.texture = defaultProfileImage;
         }
     }
+
+    #region ProfileButtonLogic
+    public void OpenProfilePage()
+    {
+        MainMenuPanel.SetActive(IsActived);  //False.
+        ProfilePanel.SetActive(!IsActived);  //True.
+    } 
+    #endregion
+
+    #region BackButtonLogic
+    public void ProfilePageBackLogic()
+    {
+        ProfilePanel.SetActive(IsActived);  //False.
+        MainMenuPanel.SetActive(!IsActived);  //True.
+    } 
+    #endregion
+
     #region ProfileImageLogic
     private IEnumerator LoadProfileImage(string url)
     {
