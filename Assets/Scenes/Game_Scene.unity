@@ -168,7 +168,7 @@ MonoBehaviour:
   - {fileID: 6218926795957947253, guid: 4e70832668dd52847bcc2ce621ad278d, type: 3}
   - {fileID: 7364511180811920597, guid: 3269c727ce5c9f146a244e764b000447, type: 3}
   - {fileID: 6598919795059887590, guid: a64c864815011044ca53c8f8ffb61b15, type: 3}
-  - {fileID: 919132149155446097, guid: 632efa79006ce1e4b93a3726308e4583, type: 3}
+  - {fileID: 3468670157804426349, guid: 817b99863aa6ac04c8a7502dd18e3bc6, type: 3}
   - {fileID: 2324727698815401415, guid: 6f5db8c25f2fc6f4b968c155675e20de, type: 3}
   PlantName: {fileID: 1299715059}
   PlantDescription: {fileID: 2102996938}
@@ -608,7 +608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &995675631
 RectTransform:
   m_ObjectHideFlags: 0

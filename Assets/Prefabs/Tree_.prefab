@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6559063736624541756}
   - component: {fileID: 2945699993479983959}
   - component: {fileID: 1593630942950167305}
+  - component: {fileID: 1035919285043008041}
+  - component: {fileID: -3256689727269383881}
   m_Layer: 0
   m_Name: Tree_
   m_TagString: Untagged
@@ -26,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2324727698815401415}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -1262.7, y: 0.02269, z: 108.28}
   m_LocalScale: {x: 0.05076, y: 0.05076, z: 0.05076}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &2945699993479983959
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -94,3 +96,41 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1035919285043008041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2324727698815401415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feab9ea284532594c8a24ff3cc4f1903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlantData
+  PlantName: Tree
+  PlantDescription: 'A tree is a tall, living plant made of wood with four main parts:
+    roots, a trunk, branches, and leaves. It can live for many years and grows big
+    and strong to give us shade, clean air, and fruit'
+  PlantImage: {fileID: 21300000, guid: 5d7263b8368bfd74ea565c12cbfbcad5, type: 3}
+--- !u!65 &-3256689727269383881
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2324727698815401415}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.0025196, y: 9.425476, z: 14.082477}
+  m_Center: {x: -1.0894017, y: 0.3056376, z: 6.8918333}
