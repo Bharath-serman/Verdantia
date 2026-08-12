@@ -16,7 +16,7 @@ An immersive Augmented Reality (AR) application built using the Unity Engine tha
 ## Built With
 
 * [Unity Engine](https://unity.com/) - Core development platform.
-* **AR Foundation / ARCore / ARKit** - Cross-platform AR framework for plane tracking and raycasting.
+* **AR Foundation / ARCore / ARKit** - Cross-platform AR framework for plane detection and raycasting.
 * **Firebase SDK** - Backend infrastructure for user authentication.
 * **C#** - Core programming language.
 
