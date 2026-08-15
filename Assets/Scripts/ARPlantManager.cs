@@ -158,7 +158,9 @@ public class ARPlantManager : MonoBehaviour
             PlantData data = hitObject.transform.GetComponent<PlantData>();
             if (data != null)
             {
-                DisplayUI(data);
+                DisplayDictionaryPanel(data);
+                Time.timeScale = 0f;
+                //Debug.Log("Scene Paused");
                 return true;
             }
         }
@@ -168,7 +170,7 @@ public class ARPlantManager : MonoBehaviour
 
     #region Display Dictionary Logic
 
-    private void DisplayUI(PlantData data)
+    private void DisplayDictionaryPanel(PlantData data)
     {
         if (DictionaryPanel == null || PlantName == null || PlantDescription == null
             || PlantImage == null) return;
@@ -183,9 +185,13 @@ public class ARPlantManager : MonoBehaviour
     #endregion
 
     #region Closing Dictionary Logic
-    public void CloseUI()
+    public void CloseDictionaryPanel()
     {
         if (DictionaryPanel == null) return;
+
+        //Resume the Background game.
+        Time.timeScale = 1f;
+        //Debug.Log("Scene Resumed");
 
         DictionaryPanel.SetActive(ActiveStatus);  //False.
     }

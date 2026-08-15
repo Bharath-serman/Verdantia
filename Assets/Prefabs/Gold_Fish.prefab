@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6574676762507179441}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,8 @@ GameObject:
   - component: {fileID: 3394478367303734938}
   - component: {fileID: 6680824152036222510}
   - component: {fileID: 2350421593544880998}
-  m_Layer: 0
+  - component: {fileID: 7448984694751171970}
+  m_Layer: 6
   m_Name: Gold_Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,8 +62,8 @@ Transform:
   m_GameObject: {fileID: 729660406392674438}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 235.896, y: 468.85, z: -709.78}
-  m_LocalScale: {x: 4.2946916, y: 4.2946916, z: 4.2946916}
+  m_LocalPosition: {x: 235.93, y: 468.85, z: -709.78}
+  m_LocalScale: {x: 2.442305, y: 2.442305, z: 2.442305}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6574676762507179441}
@@ -129,6 +130,27 @@ MonoBehaviour:
     orange color, rounded body, and long lifespan. Originally bred from carp in China,
     they are now a common pet found in homes around the world.
   PlantImage: {fileID: 21300000, guid: 24fa209f6618c764e85a06fcbbd0f618, type: 3}
+--- !u!135 &7448984694751171970
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729660406392674438}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.06822427
+  m_Center: {x: -0.004149748, y: 0, z: -0.022990322}
 --- !u!1 &5813270160418585020
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2876036967568944930}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_fin_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4291040591084227158}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2556257917421986810}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_fin_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8650880503946374118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_spine_front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2189790074376986872}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_spine_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7439046619102573303}
   - component: {fileID: 2071707350561550801}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: clownfish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7694681634901758188}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_tailfin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
