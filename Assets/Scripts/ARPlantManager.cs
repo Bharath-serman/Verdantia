@@ -38,7 +38,6 @@ public class ARPlantManager : MonoBehaviour
     private List<ARRaycastHit> hits = new List<ARRaycastHit>();
     #endregion
 
-
     //Selected Prefab Button Logic
     public void SelectedPrefab(GameObject prefab)
     {
