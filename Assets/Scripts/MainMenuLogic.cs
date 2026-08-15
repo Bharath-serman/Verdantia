@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class MainMenuLogic : MonoBehaviour
 {
@@ -26,6 +28,10 @@ public class MainMenuLogic : MonoBehaviour
     [SerializeField] private GameObject LoadText;
     [SerializeField] private GameObject MainPanel;
     [SerializeField] private GameObject AboutPanel;
+
+    [Header("Menu_Buttons")]
+    [Tooltip("The Button Elements that are present in the MainMenu")]
+    public List<Button> ButtonList;
 
     #endregion
 
@@ -68,11 +74,23 @@ public class MainMenuLogic : MonoBehaviour
         Instance = this;
     }
 
-    public void BeginGame()
+    public void BeginGame() 
     {
+        ButtonInteractableLogic();
         StartCoroutine(FadeAudioVolume());
         StartCoroutine(StartGame());
     }
+
+    #region Non_Interactable_Logic
+    void ButtonInteractableLogic()
+    {
+        //Make the MainMenu Buttons Non-Interactable.
+        foreach(Button button in ButtonList)
+        {
+            button.interactable = Status;  //False.
+        }
+    } 
+    #endregion
 
     #region About Button Logic
     public void AboutLogic()
