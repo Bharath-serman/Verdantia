@@ -1350,9 +1350,9 @@ MonoBehaviour:
   PlantDescription: 'Tuna are large, fast-swimming saltwater fish found in temperate
     and tropical oceans worldwide, belonging to the mackerel family. They possess
     sleek, torpedo-shaped bodies and a unique warm-blooded circulatory system that
-    enables them to swim at incredible speeds up to 70 km/h. As apex predators, they
-    feed on smaller fish and squid, while also serving as a vital food source for
-    humans and larger marine life. '
+    enables them to swim at incredible speeds. As apex predators, they feed on smaller
+    fish and squid, while also serving as a vital food source for humans and larger
+    marine life. '
   PlantImage: {fileID: 21300000, guid: 404fad5e605c0d343a6dc8d4658a219c, type: 3}
 --- !u!1 &2770554976513783778
 GameObject:

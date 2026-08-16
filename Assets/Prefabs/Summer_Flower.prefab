@@ -195,14 +195,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantData
   PlantName: Rose
-  PlantDescription: 'The rose unfolds like a love letter written by the dawn, each
-    velvet petal carrying whispers of devotion untold.
-
-    Its fragrance lingers
-    like a cherished memory, drifting softly between longing and affection.
-
-    Guarded
-    by gentle thorns, it reminds us that the deepest love is both tender and brave.'
+  PlantDescription: The rose unfolds like a love letter written by the dawn, each
+    velvet petal carrying whispers of devotion untold. Its fragrance lingers like
+    a cherished memory, drifting softly between longing and affection. Guarded by
+    gentle thorns, it reminds us that the deepest love is both tender and brave.
   PlantImage: {fileID: 21300000, guid: fb0987e42fa9e0b43b3e9f162489f035, type: 3}
 --- !u!1 &6772632550630234874
 GameObject:
