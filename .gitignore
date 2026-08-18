@@ -43,6 +43,9 @@ firebase-service-account.json
 *-firebase-adminsdk-*.json
 Assets/Firebase/Plugins/x86_64/FirebaseCppApp-13_12_0.bundle
 
+# Firebase configuration
+google-services.json
+**/google-services.json
 
 # Environment / secret files
 .env
