@@ -107,3 +107,21 @@ InitTestScene*.unity*
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 
 Assets/Firebase/Plugins/x86_64/
+
+# Firebase secrets / credentials
+.env
+.env.*
+serviceAccountKey.json
+firebase-service-account.json
+*-firebase-adminsdk-*.json
+
+# Firebase Android config - only ignore if you intentionally keep it out of Git
+google-services.json
+
+# Firebase iOS config - only ignore if you intentionally keep it out of Git
+GoogleService-Info.plist
+
+# Android signing
+*.keystore
+*.jks
+keystore.properties
