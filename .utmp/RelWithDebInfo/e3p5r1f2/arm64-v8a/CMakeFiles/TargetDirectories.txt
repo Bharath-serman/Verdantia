@@ -1,0 +1,5 @@
+V:/Verdenta/.utmp/RelWithDebInfo/e3p5r1f2/arm64-v8a/CMakeFiles/edit_cache.dir
+V:/Verdenta/.utmp/RelWithDebInfo/e3p5r1f2/arm64-v8a/CMakeFiles/rebuild_cache.dir
+V:/Verdenta/.utmp/RelWithDebInfo/e3p5r1f2/arm64-v8a/GameActivity/CMakeFiles/game.dir
+V:/Verdenta/.utmp/RelWithDebInfo/e3p5r1f2/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+V:/Verdenta/.utmp/RelWithDebInfo/e3p5r1f2/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
